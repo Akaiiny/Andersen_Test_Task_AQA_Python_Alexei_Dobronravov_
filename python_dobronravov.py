@@ -25,14 +25,15 @@ def name_validation():
 
 def multiples_of_three():
     while True:
+        user_input = input("Enter a sequence of numbers separated by spaces (or press Enter to exit): ")
+        if not user_input:
+            print('No input provided. Exiting.')
+            break
         try:
-            user_input = input("Enter a sequence of numbers separated by spaces (or press Enter to exit): ")
-            if not user_input:
-                print('No input provided. Exiting.')
-                break
             numbers = [int(i) for i in user_input.split() if int(i) % 3 == 0]
             if numbers:
                 print(numbers)
+                break
             else:
                 print('No numbers multiples 3 found')
         except ValueError:
@@ -43,3 +44,4 @@ if __name__ == '__main__':
     num_validation()
     name_validation()
     multiples_of_three()
+    
